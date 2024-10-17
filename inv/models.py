@@ -19,3 +19,55 @@ class Categoria(ClaseModelo): #Hereda las propiedades/atributos de la clase mode
 
     class Meta: #metaclase para definir los atributos de la clase
         verbose_name_plural = "Categorías"
+
+class SubCategoria(ClaseModelo):
+    Categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    descripcion = models.CharField(
+        max_length=100,
+        help_text='Descripción de la subcategoría'
+    )
+
+    def __str__(self):
+        return '{}:{}'.format(self.Categoria.descripcion, self.descripcion)
+    
+    def save(self):
+        self.descripcion = self.descripcion.upper()
+        super(SubCategoria, self).save() 
+
+    class Meta:
+        verbose_name_plural = "Sub Categorías"
+        unique_together = ('Categoria', 'descripcion')
+
+class Marca(ClaseModelo):
+    descripcion = models.CharField(
+        max_length=100,
+        help_text='Descripción de la marca',
+        unique=True
+    )
+
+    def __str__(self):
+        return '{}'.format(self.descripcion)
+    
+    def save(self):
+        self.descripcion = self.descripcion.upper()
+        super(Marca, self).save()
+
+    class Meta:
+        verbose_name_plural = "Marca"
+
+class UnidadMedida(ClaseModelo):
+    descripcion = models.CharField(
+        max_length=100,
+        help_text='Descripción de la unidad de medida',
+        unique=True
+    )
+
+    def __str__(self):
+        return '{}'.format(self.descripcion)
+    
+    def save(self):
+        self.descripcion = self.descripcion.upper()
+        super(UnidadMedida, self).save()
+
+    class Meta:
+        verbose_name_plural = "Unidades de Medida"
