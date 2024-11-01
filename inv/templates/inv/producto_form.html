@@ -20,7 +20,7 @@
                         <div class="dropdown-divider"></div>
                         {% csrf_token %}
                         <div class="row">
-                            {#{ form.as_p }#}
+                        {#{ form.as_p }#}
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -78,7 +78,7 @@
                                 <div class="col-md-6">
                                     <select name="Categoria" id="id_categoria" class="form-control from-control-sm">
                                         <option value="0">-------</option>
-                                        {% for item in Categorías %}
+                                        {% for item in categorias %}
                                         <option value="{{ item.id }}">{{ item.descripcion }}</option>
                                         {% endfor %}
                                     </select>
