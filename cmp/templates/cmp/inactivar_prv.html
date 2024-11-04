@@ -59,9 +59,9 @@
             success: function(response){
               console.log(response);
               cerrar_modal();
-              alert(response);
-              //var tipo=(response.startsWith('Proveedor no existe') ? 'red':'green' );
-              //mensaje(response,tipo);
+              //alert(response);
+              var tipo=(response.startsWith('Proveedor no existe') ? 'red':'green' );
+              mensaje(response, tipo);
             },
             error: function(jqXHR, textStatus, errorThrow){
               console.log(textStatus, errorThrow);
