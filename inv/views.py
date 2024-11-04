@@ -82,7 +82,7 @@ class SubCategoriaEdit(SuccessMessageMixin,SinPrivilegios, generic.UpdateView):
     form_class = SubCategoriaForm
     success_url = reverse_lazy("inv:subcategoria_list")
     success_message="Sub Categoría Actualizada Satisfactoriamente"
-    permission_required="inv.change_subcatetoria"
+    permission_required="inv.change_subcategoria"
 
     def form_valid(self, form):
         form.instance.um = self.request.user.id
