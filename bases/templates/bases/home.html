@@ -1,1 +1,99 @@
 {% extends 'base/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Ventas</title>
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo claro */
+            font-family: 'Arial', sans-serif; /* Fuente moderna */
+            margin: 0;
+            padding: 0;
+        }
+        .hero {
+            background: linear-gradient(to right, #007bff, #6610f2);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.2em;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+        }
+        .card h2 {
+            color: #007bff;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .feature-item {
+            background: #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 30%;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .feature-item:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>Bienvenido al Sistema de Ventas</h1>
+    <p>Gestione sus productos de manera eficiente</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>¿Qué ofrecemos?</h2>
+        <div class="features">
+            <div class="feature-item">
+                <h3>Gestión de Inventario</h3>
+                <p>Mantenga un control preciso de su stock.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Informes de Ventas</h3>
+                <p>Analice sus ventas con reportes detallados.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Atención al Cliente</h3>
+                <p>Brinde un excelente servicio a sus clientes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Sistema de Ventas. Todos los derechos reservados.</p>
+</footer>
+
+{% endblock %}
+</body>
+</html>

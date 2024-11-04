@@ -6,7 +6,7 @@ import datetime
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.decorators import login_required, permission_required
 #from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponse #,JsonResponse
+from django.http import HttpResponse ,JsonResponse
 import json
 from django.db.models import Sum
 
@@ -32,8 +32,9 @@ class ProveedorNew(SuccessMessageMixin, SinPrivilegios, generic.CreateView):
 
     def form_valid(self, form):
         form.instance.uc = self.request.user
-        print(self.request.user.id) #comentado
+        print(self.request.user.id)
         return super().form_valid(form)
+
 
 class ProveedorEdit(SuccessMessageMixin, SinPrivilegios, generic.UpdateView):
     model = Proveedor
